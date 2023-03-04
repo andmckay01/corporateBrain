@@ -1,1 +1,43 @@
-why hello there
+////CORPORATE BRAIN////
+
+Software Stack:
+Node.js and Javascript for api interfacing, server, and front-end
+Simple React 
+OpenAI Curie Fine-Tuned model (our own custom model trained with company data)
+Python to handle image recognition and other specialized tasks
+
+
+-------Phase 1-------
+
+Frontend:
+1. Training questions and answers management
+2. Actual question portal
+  a) saves history
+
+Backend:
+1. Database to save the training questions and mark if these are new and should be used upon next trainig.
+2. Database to save the queries and outputs
+
+Logic:
+1. Not allow massive queries
+2. Not allow answering any questions besides those that we trained on (link to chatgpt if these are seen)
+
+
+-------Phase 2-------
+image and materials ingestion
+
+Frontend:
+1. Ability to upload images 
+
+Backend:
+2. Python script will then parse these images for sections of text
+3. Then it will use openAI to parse the information into questions and answers that make sense
+4. and Ultimately save these to our database and mark with a "0" for trained
+
+
+
+-------Phase 3-------
+Automated chat and email ingestion with easy front-end identification of potentially outdated information
+Parse this chat and email information with AI to filter out anything that is potentially sensitive (that legal would want deleted)
+Save what is not and use to continuousely train the model
+
