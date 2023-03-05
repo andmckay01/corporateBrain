@@ -6,6 +6,8 @@ Simple React
 OpenAI Curie Fine-Tuned model (our own custom model trained with company data)
 Python to handle image recognition and other specialized tasks
 
+**start with the League as a case-study
+
 
 -------Phase 1-------
 
