@@ -1,6 +1,4 @@
-import type { NextPage } from "next";
-
-const Home: NextPage = () => {
+const Home = () => {
   return (
     <div className="container flex items-center p-4 mx-auto min-h-screen justify-center">
       <main>

@@ -1,19 +1,19 @@
 const { Firestore } = require("@google-cloud/firestore");
-const envVariables = require("../env.tsx");
+const envVariables1 = require("../env.jsx");
 
 const firestore = new Firestore({
   projectId: "corporatebrain",
   credentials: {
-    client_email: envVariables.firestore_client_email,
-    private_key: envVariables.firestore_private_key,
+    client_email: envVariables1.firestore_client_email,
+    private_key: envVariables1.firestore_private_key,
   },
 });
 
-const docRef = firestore.collection("users").doc("test-user");
+const docRef = firestore.collection("users").doc("test-user-2");
 
 const data = {
-  name: "test user",
-  email: "testemail@gmail.com",
+  name: "test user 2",
+  email: "testemail2@gmail.com",
 };
 
 docRef
@@ -22,7 +22,6 @@ docRef
     console.log(data);
     console.log("document written successfully");
   })
-  // @ts-ignore
   .catch((error) => {
     console.error("error writing document:", error);
   });

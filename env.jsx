@@ -1,4 +1,4 @@
-const { dotenv } = require("dotenv").config();
+require("dotenv").config();
 const fs = require("fs");
 
 const credentialsPath = process.env.GOOGLE_APPLICATION_CREDENTIALS;
@@ -14,6 +14,7 @@ const firestore_auth_uri = credentials.auth_uri;
 const firestore_token_uri = credentials.token_uri;
 const firestore_auth_provider = credentials.auth_provider_x509_cert_url;
 const firestore_client_url = credentials.client_x509_cert_url;
+const openai_api_key = process.env.OPENAI_KEY;
 
 module.exports = {
   firestore_type: firestore_type,
@@ -26,4 +27,5 @@ module.exports = {
   firestore_token_uri: firestore_token_uri,
   firestore_auth_provider: firestore_auth_provider,
   firestore_client_url: firestore_client_url,
+  openai_api_key: openai_api_key,
 };
