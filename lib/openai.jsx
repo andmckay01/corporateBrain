@@ -15,7 +15,10 @@ async function main(req, res) {
       },
     });
     return;
+
   }
+
+  console.log(req.body);
 
   const animal = req.body.animal || "";
   if (animal.trim().length === 0) {
@@ -29,7 +32,7 @@ async function main(req, res) {
 
   try {
     const completion = await openai.createCompletion({
-      model: "text-davinci-003",
+      model: "curie",
       prompt: generatePrompt(animal),
       temperature: 0.6,
     });
@@ -63,4 +66,4 @@ Animal: ${capitalizedAnimal}
 Names:`;
 }
 
-module.exports = { main, generatePrompt }
+module.exports = { main }

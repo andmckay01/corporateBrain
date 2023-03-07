@@ -19,3 +19,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.landing {
+  background-image: url("../public/imageNew.png");
+  background-size: cover;
+  background-position: center;
+  min-width: 100%;
+  min-height: 100%;
+
+}
