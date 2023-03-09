@@ -15,6 +15,7 @@ const firestore_token_uri = credentials.token_uri;
 const firestore_auth_provider = credentials.auth_provider_x509_cert_url;
 const firestore_client_url = credentials.client_x509_cert_url;
 const openai_api_key = process.env.OPENAI_KEY;
+const firebase_api_key = process.env.FIREBASE_API_KEY
 
 module.exports = {
   firestore_type: firestore_type,
@@ -28,4 +29,5 @@ module.exports = {
   firestore_auth_provider: firestore_auth_provider,
   firestore_client_url: firestore_client_url,
   openai_api_key: openai_api_key,
+  firebase_api_key: firebase_api_key,
 };
