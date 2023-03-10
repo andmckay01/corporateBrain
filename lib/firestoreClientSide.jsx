@@ -1,13 +1,17 @@
-const env = require('../env.jsx');
-const { initializeApp } = require('firebase/app');
-const { getFirestore, collection, doc, getDoc, setDoc, serverTimestamp, getDocs } = require('firebase/firestore');
-const { v4: uuidv4 } = require('uuid');
+// const env = require('../env.jsx');
+// const { initializeApp } = require('firebase/app');
+// const { getFirestore, collection, doc, getDoc, setDoc, serverTimestamp } = require('firebase/firestore');
+// const { v4: uuidv4 } = require('uuid');
+
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { v4 as uuidv4 } from 'uuid';
 
 // const { getAnalytics } = require('firebase/analytics');
 // const analytics = getAnalytics(app); #not using right now but may in the future
 
 const firebaseConfig = {
-  apiKey: `${env.firebase_api_key}`,
+  apiKey: `${process.env.firebase_api_key}`,
   authDomain: "corporatebrain.firebaseapp.com",
   projectId: "corporatebrain",
   storageBucket: "corporatebrain.appspot.com",
@@ -20,15 +24,15 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-async function submit() {
+async function submit(submission) {
     try {
       let id;
       let newDoc;
       let data = {
         created: serverTimestamp(),
-        ipAddress: "192.158.1.38",
-        responseText: "cookies are great",
-        submissionText: "tell me about cookies"
+        ipAddress: "192.158.1.38", //need to use req.ip in a request (req, res) on the server side to get the client ip address
+        submissionText: `${submission}`, //pass this in
+        responseText: null
       };
   
       do {
@@ -44,14 +48,17 @@ async function submit() {
       throw e;
     }
   }
-  
-submit()
 
+module.exports = { submit }
+
+// async function response() {
+
+// }
 
 /*
 TO DO:
 1. Function to take a parameter (form submission) and write to the database (will be used by our middleware)
-2. Function to take the response from openai and write to our database
+2. Function to take the response from openai and write to our database (again, used by middleware)
 3. Write database rules that ensure step 1 and 2 are only able to read or write, never overwrite
   - can read or write anything
 */
