@@ -16,51 +16,44 @@ const firebaseConfig = {
   measurementId: "G-KQ4HW2KNFX"
 };
 
-// Initialize Firebase
+// Initialize Firestore
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// const docRef = doc(db, "users", "test-user-1");
-// const colRef = collection(db, "users");
-
-data = {
-    created: 'March 9, 2023 at 10:53:59 AM UTC-7',
-    ipAddress: "192.158.1.38",
-    responseText: "cookies are great",
-    submissionText: "tell me about cookies"
-}
-
 async function submit() {
-    const id = uuidv4();
-    const newDoc = doc(collection(db, "new"))
-
-    await setDoc(newDoc, data)
-    return 'hello'
-
-    //generate uuid
-    //check if already exists and regenerate if it does
-    //create a document in our collection with the necessary data
-    //make sure to include error-handling and log these errors
-
-}
-
+    try {
+      let id;
+      let newDoc;
+      let data = {
+        created: serverTimestamp(),
+        ipAddress: "192.158.1.38",
+        responseText: "cookies are great",
+        submissionText: "tell me about cookies"
+      };
+  
+      do {
+        id = uuidv4();
+        newDoc = doc(collection(db, "subres"), id);
+      } while ((await getDoc(newDoc)).exists());
+  
+      await setDoc(newDoc, data);
+      console.log("Document written with ID: ", id);
+      return data;
+    } catch (e) {
+      console.error("Error writing document: ", e);
+      throw e;
+    }
+  }
+  
 submit()
 
-/*
-collection schema
-1. subres (submission and response) -- id
-  - created: datetime
-  - ipAddress: string
-  - submissionText: string
-  - responseText: string
-*/
 
 /*
 TO DO:
 1. Function to take a parameter (form submission) and write to the database (will be used by our middleware)
 2. Function to take the response from openai and write to our database
 3. Write database rules that ensure step 1 and 2 are only able to read or write, never overwrite
-
+  - can read or write anything
 */
 
 
