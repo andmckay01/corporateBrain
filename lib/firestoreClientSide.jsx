@@ -1,8 +1,3 @@
-// const env = require('../env.jsx');
-// const { initializeApp } = require('firebase/app');
-// const { getFirestore, collection, doc, getDoc, setDoc, serverTimestamp } = require('firebase/firestore');
-// const { v4: uuidv4 } = require('uuid');
-
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { v4 as uuidv4 } from 'uuid';
@@ -31,7 +26,7 @@ async function submit(submission) {
       let data = {
         created: serverTimestamp(),
         ipAddress: "192.158.1.38", //need to use req.ip in a request (req, res) on the server side to get the client ip address
-        submissionText: `${submission}`, //pass this in
+        submissionText: `${submission}`,
         responseText: null
       };
   
@@ -50,10 +45,6 @@ async function submit(submission) {
   }
 
 module.exports = { submit }
-
-// async function response() {
-
-// }
 
 /*
 TO DO:
