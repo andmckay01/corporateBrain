@@ -44,7 +44,7 @@ async function submit(submission) {
     }
   }
 
-module.exports = { submit }
+export default submit
 
 /*
 TO DO:
