@@ -15,9 +15,8 @@ const Response = ({ handleSubmit }) => {
                 <div class="h-3/5 bg-gray-700 border border-gray-600 text-sm rounded-lg block 
                 w-full p-2.5 mb-2">
                     <p class="mb-3 font-normal text-gray-100">
-                        The point value for an MPU is 8 points assumping it 
-                        was installed before or during the install itself and that the workorder indicated this SOW 
-                        would be installed by the branch
+                        The point value for an MPU is 8 points, assuming it 
+                        was installed before or during the install the workorder was marked as being installed by the branch
                     </p>
                 </div>
 
