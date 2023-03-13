@@ -1,5 +1,6 @@
-import submit from '../lib/firestoreClientSide'
-import Search from './searchBar'
+import submit from '../lib/firestoreClientSide';
+import Search from './searchBar';
+import Response from './responseBox';
 
 const Home = () => {
   // const { submit } = require('../lib/firestoreClientSide');
@@ -25,7 +26,8 @@ const Home = () => {
   }
 
   return (
-    <Search handleSubmit={handleSubmit}/>
+    <Response handleSubmit={handleSubmit}/>
+    // <Search handleSubmit={handleSubmit}/>
   );
 };
 

@@ -6,7 +6,7 @@ const Search = ({ handleSubmit }) => {
         <div className="landing container flex items-center p-4 mx-auto h-screen justify-center">
 
         <form className="flex w-3/4 sm:w-3/5 md:w-3/5 lg:w-1/2 xl:w-2/5 mb-5"
-        action="" onSubmit={handleSubmit} htmlFor="search">   
+         onSubmit={handleSubmit} htmlFor="search">   
 
             <label htmlFor="search" className="sr-only">Search</label>
 
