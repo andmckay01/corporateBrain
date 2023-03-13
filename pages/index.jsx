@@ -3,7 +3,6 @@ import Search from './searchBar';
 import Response from './responseBox';
 
 const Home = () => {
-  // const { submit } = require('../lib/firestoreClientSide');
 
   const handleSubmit = async (event) => {
     event.preventDefault(); //default follows the url, we want to stay this page for now

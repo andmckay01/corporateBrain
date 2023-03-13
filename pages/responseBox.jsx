@@ -5,26 +5,34 @@ const Response = ({ handleSubmit }) => {
     <main>
         <div className="landing container flex items-center p-4 mx-auto h-screen justify-center">
 
-        <form className="flex w-3/4 sm:w-3/5 md:w-3/5 lg:w-1/2 xl:w-2/5 h-2/5 mb-5 items-end"
-        onSubmit={handleSubmit} htmlFor="search">   
+            <div className="flex flex-col w-3/4 sm:w-4/5 md:w-3/5 lg:w-1/2 xl:w-2/5 h-2/5 mb-5">
 
-            <label htmlFor="search" className="sr-only">Search</label>
-
-            <div className="w-full h-full relative">
-                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <div class="h-1/5 bg-gray-700 border border-gray-600 text-sm rounded-lg block 
+                w-full p-2.5 mb-2">
+                    <p class="mb-3 font-normal text-gray-100">What is the point value for an MPU?</p>
                 </div>
-                <input type="text"
-                id="search"
-                name="search"
-                className="h-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block 
-                w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
-                required></input>
+
+                <div class="h-3/5 bg-gray-700 border border-gray-600 text-sm rounded-lg block 
+                w-full p-2.5 mb-2">
+                    <p class="mb-3 font-normal text-gray-100">
+                        The point value for an MPU is 8 points assumping it 
+                        was installed before or during the install itself and that the workorder indicated this SOW 
+                        would be installed by the branch
+                    </p>
+                </div>
+
+                <div className="flex justify-left">
+                <button type="submit" className="mt-auto h-min p-2.5 mr-2.5 text-sm font-medium text-white bg-blue-800 
+                rounded-lg border border-blue-800 hover:bg-blue-900 focus:ring-1 focus:outline-none focus:ring-blue-300">
+                    Ask Another
+                </button>
+                <button type="submit" className="mt-auto h-min p-2.5 text-sm font-medium text-white bg-slate-400 
+                rounded-lg border border-slate-400 hover:bg-slate-500 focus:ring-1 focus:outline-none focus:ring-blue-300">
+                    Give feedback
+                </button>
             </div>
 
-            <button type="submit" className="h-min p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Ask Again
-            </button>
-        </form>
+            </div>
 
         </div>
     </main>

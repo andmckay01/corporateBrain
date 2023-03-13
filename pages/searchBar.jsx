@@ -28,7 +28,7 @@ const Search = ({ handleSubmit }) => {
                 required></input>
             </div>
 
-            <button type="submit" className="p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800">
+            <button type="submit" className="p-2.5 ml-2 text-sm font-medium text-white bg-blue-800 rounded-lg border border-blue-800 hover:bg-blue-900">
                 submit
             </button>
         </form>
