@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 const Home = () => {
 
   const [responseData, setResponseData] = useState(null);
+  const [submissionText, setSubmissionText] = useState(null);
 
   const handleSubmit = async (event) => {
     event.preventDefault(); //default follows the url, we want to stay this page for now
@@ -25,6 +26,7 @@ const Home = () => {
 
     const responseData = await response.json();
     setResponseData(responseData);
+    setSubmissionText(submissionText);
   }
 
   useEffect(() => {
@@ -35,7 +37,7 @@ const Home = () => {
   return (
     <div>
       <Search handleSubmit={handleSubmit}/>
-      <Response responseData={responseData} key={responseData?.id} />
+      <Response responseData={responseData} submissionText={submissionText} key={responseData?.id} />
     </div>
   );
 };

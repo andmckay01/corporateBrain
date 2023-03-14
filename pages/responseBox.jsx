@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Response = ({ responseData }) => {
+const Response = ({ responseData, submissionText }) => {
     return (
         <div>
          {responseData ? (
@@ -11,14 +11,13 @@ const Response = ({ responseData }) => {
 
                         <div className="h-1/5 bg-gray-700 border border-gray-600 text-sm rounded-lg block 
                         w-full p-2.5 mb-2 overflow-scroll text-base">
-                            <p className="mb-3 font-normal text-white">What is the point value for an MPU?</p>
+                            <p className="mb-3 font-normal text-white">{submissionText}</p>
                         </div>
 
                         <div className="h-3/5 bg-gray-700 border border-gray-600 text-sm rounded-lg block 
                         w-full p-2.5 mb-2 overflow-scroll text-base">
                             <p className="mb-3 font-normal text-white">
-                                The point value for an MPU is 8 points, assuming it 
-                                was installed before or during the install the workorder was marked as being installed by the branch
+                                {responseData.result}
                             </p>
                         </div>
 
