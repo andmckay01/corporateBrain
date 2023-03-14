@@ -1,9 +1,11 @@
 import submit from '../lib/firestoreClientSide';
 import Search from './searchBar';
 import Response from './responseBox';
-import head from 'next/head';
+import { useEffect, useState } from 'react';
 
 const Home = () => {
+
+  const [responseData, setResponseData] = useState(null);
 
   const handleSubmit = async (event) => {
     event.preventDefault(); //default follows the url, we want to stay this page for now
@@ -22,12 +24,19 @@ const Home = () => {
     });
 
     const responseData = await response.json();
-    console.log(responseData);
+    setResponseData(responseData);
   }
 
+  useEffect(() => {
+    // This function will be called every time the `responseData` state changes
+    console.log('responseData has changed:', responseData);
+  }, [responseData]); // Add `responseData` as a dependency of the effect
+
   return (
-    <Response handleSubmit={handleSubmit}/>
-    // <Search handleSubmit={handleSubmit}/>
+    <div>
+      <Search handleSubmit={handleSubmit}/>
+      <Response responseData={responseData} key={responseData?.id} />
+    </div>
   );
 };
 

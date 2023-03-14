@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 
 const Search = ({ handleSubmit }) => {
     return (
@@ -23,12 +24,12 @@ const Search = ({ handleSubmit }) => {
                 id="search"
                 name="search"
                 className="bg-gray-700 border border-gray-600 text-gray-100 text-sm rounded-lg block outline 
-                w-full pl-10 p-2.5 placeholder-gray-400 outline-transparent focus:border-blue-700" 
+                w-full pl-10 p-2.5 placeholder-gray-400 outline-transparent focus:border-blue-700 text-base" 
                 placeholder="Ask a question"
                 required></input>
             </div>
 
-            <button type="submit" className="p-2.5 ml-2 text-sm font-medium text-white bg-blue-800 rounded-lg border border-blue-800 hover:bg-blue-900">
+            <button type="submit" className="p-2.5 ml-2 text-sm font-medium text-white bg-blue-800 rounded-lg border border-blue-800 hover:bg-blue-900 text-base">
                 submit
             </button>
         </form>
