@@ -1,6 +1,7 @@
 import submit from '../lib/firestoreClientSide';
 import Search from './searchBar';
 import Response from './responseBox';
+import head from 'next/head';
 
 const Home = () => {
 

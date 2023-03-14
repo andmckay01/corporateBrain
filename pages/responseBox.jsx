@@ -7,14 +7,14 @@ const Response = ({ handleSubmit }) => {
 
             <div className="flex flex-col w-3/4 sm:w-4/5 md:w-3/5 lg:w-1/2 xl:w-2/5 h-2/5 mb-5">
 
-                <div class="h-1/5 bg-gray-700 border border-gray-600 text-sm rounded-lg block 
+                <div className="h-1/5 bg-gray-700 border border-gray-600 text-sm rounded-lg block 
                 w-full p-2.5 mb-2">
-                    <p class="mb-3 font-normal text-gray-100">What is the point value for an MPU?</p>
+                    <p className="mb-3 font-normal text-gray-100">What is the point value for an MPU?</p>
                 </div>
 
-                <div class="h-3/5 bg-gray-700 border border-gray-600 text-sm rounded-lg block 
+                <div className="h-3/5 bg-gray-700 border border-gray-600 text-sm rounded-lg block 
                 w-full p-2.5 mb-2">
-                    <p class="mb-3 font-normal text-gray-100">
+                    <p className="mb-3 font-normal text-gray-100">
                         The point value for an MPU is 8 points, assuming it 
                         was installed before or during the install the workorder was marked as being installed by the branch
                     </p>
